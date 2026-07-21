@@ -1,7 +1,14 @@
 import requests
+import streamlit as st
 
-smoothiefroot_response = requests.get(
-    "https://smoothiefroot.com/api/fruit/watermelon"
-)
+url = "https://smoothiefroot.com/api/fruit/watermelon"
 
-st.json(smoothiefroot_response.json())
+try:
+    response = requests.get(url)
+
+    st.write("Status Code:", response.status_code)
+
+    st.json(response.json())
+
+except Exception as e:
+    st.error(f"Error: {e}")
