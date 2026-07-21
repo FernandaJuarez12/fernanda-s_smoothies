@@ -2,10 +2,10 @@ import streamlit as st
 import requests
 from snowflake.snowpark.functions import col
 
-smoothiefroot_response = requests.get(
-    "https://smoothiefroot.com/api/fruit/watermelon")
+response = requests.get("https://httpbin.org/get")
 
-st.text(smoothiefroot_response)
+st.write("Status Code:", response.status_code)
+st.write(response.text)
 
 cnx = st.connection("snowflake")
 session = cnx.session()
