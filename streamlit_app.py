@@ -1,8 +1,7 @@
-import streamlit as st
 import requests
 
-st.title("🍓 Fernanda Smoothies")
+smoothiefroot_response = requests.get(
+    "https://smoothiefroot.com/api/fruit/watermelon"
+)
 
-response = requests.get("https://httpbin.org/get")
-
-st.write("Status Code:", response.status_code)
+st.json(smoothiefroot_response.json())
