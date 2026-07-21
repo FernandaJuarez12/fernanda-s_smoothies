@@ -3,9 +3,9 @@ import requests
 from snowflake.snowpark.functions import col
 
 smoothiefroot_response = requests.get(
-    "https://my.smoothiefroot.com/api/fruit/watermelon")
+    "https://smoothiefroot.com/api/fruit/watermelon")
 
-st.text(smoothiefroot_response.json())
+st.text(smoothiefroot_response)
 
 cnx = st.connection("snowflake")
 session = cnx.session()
