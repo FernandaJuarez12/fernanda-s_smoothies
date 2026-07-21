@@ -1,13 +1,9 @@
+import streamlit as st
 import requests
 
-headers = {
-    "User-Agent": "Mozilla/5.0"
-}
-
 response = requests.get(
-    "https://smoothiefroot.com/api/fruit/watermelon",
-    headers=headers
+    "https://httpbin.org/json"
 )
 
-st.write(response.status_code)
-st.text(response.text)
+st.write("Status Code:", response.status_code)
+st.json(response.json())
