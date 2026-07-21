@@ -1,10 +1,13 @@
 import requests
-import streamlit as st
 
-url = "https://smoothiefroot.com/api/fruit/watermelon"
+headers = {
+    "User-Agent": "Mozilla/5.0"
+}
 
-response = requests.get(url)
+response = requests.get(
+    "https://smoothiefroot.com/api/fruit/watermelon",
+    headers=headers
+)
 
-st.write("Status Code:", response.status_code)
-st.write("Texto recibido:")
+st.write(response.status_code)
 st.text(response.text)
