@@ -1,3 +1,4 @@
+import streamlit as st
 import requests
 
 smoothiefroot_response = requests.get(
