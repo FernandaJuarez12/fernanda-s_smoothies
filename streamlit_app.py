@@ -1,7 +1,8 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
 
-session = get_active_session()
+cnx = st.connection("snowflake")
+session = cnx.session()
 
 st.title(":cup_with_straw: Customize Your Smoothie! :cup_with_straw:")
 
@@ -34,7 +35,7 @@ if ingredients_list:
     INSERT INTO smoothies.public.orders
     (ingredients, name_on_order)
     VALUES
-    ('""" + ingredients_string + """','"""+ name_on_order + """')
+    ('""" + ingredients_string + """','""" + name_on_order + """')
     """
 
     if st.button("Submit order"):
