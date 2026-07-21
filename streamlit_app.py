@@ -1,6 +1,7 @@
-import streamlit as st
 import requests
 
-response = requests.get("https://httpbin.org/json")
+smoothiefroot_response = requests.get(
+    "https://smoothiefroot.com/api/fruit/watermelon"
+)
 
-st.json(response.json())
+st.json(smoothiefroot_response.json())
