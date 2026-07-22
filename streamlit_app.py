@@ -27,7 +27,7 @@ if ingredients_list:
             "https://my.smoothiefroot.com/api/fruit/" + fruit_chosen
         )
 
-        sf_df = st.dataframe(
+        st.dataframe(
             data=smoothiefroot_response.json(),
             use_container_width=True
         )
