@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+
 st.title(":cup_with_straw: Customize Your Smoothie! :cup_with_straw:")
 
 st.write("""
@@ -14,14 +15,6 @@ st.write(
     "The name on your Smoothie will be",
     name_on_order
 )
-
-ingredients_list = st.multiselect(
-    "Choose up to 5 ingredients:",
-    pd_df["FRUIT_NAME"].tolist(),
-    max_selections=5
-)
-
-st.title(":cup_with_straw: Customize Your Smoothie! :cup_with_straw:")
 
 ingredients_list = st.multiselect(
     "Choose up to 5 ingredients:",
